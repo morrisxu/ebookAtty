@@ -41,7 +41,7 @@ class MetadataFetcher:
         self.path = Path(path)
         if self.path.suffix == ".epub":
             self.meta = epub.Epub(self.path)
-        elif self.path.suffix in [".azw3", "azw", "kfx", ".mobi"]:
+        elif self.path.suffix in [".azw3", ".azw", ".kfx", ".mobi"]:
             self.meta = mobi.Kindle(self.path)
         else:
             self.meta = {}
