@@ -136,6 +136,9 @@ def text_sections(section_size: int, text: str) -> str:
         size = section_size
         while text[size] != ' ':
             size -= 1
+            if size == 0:
+                size = section_size
+                break
         yield text[:size]
         text = text[size+1:]
     yield text
